@@ -2,6 +2,14 @@
 
 This is an OpenSCAD schematic that generates a Triple Ring toy model based on your own measurements. The design is inspired in [this kind of toy][1] (informative usage illustration, NSFW.)
 
+## Usage
+
+ 1. Edit the values inside the OpenSCAD file and output an STL model. 
+ 2. Print a low-resolution and low-density prototype model to test if it fits.
+ 3. Adjust the values if necessary, and print your final piece.
+
+If you try this, let me know how it went.
+
 ## Example measurements
 
 These are merely informative in case you don't feel like measuring yourself down there and just want to go in and print something.
@@ -9,14 +17,6 @@ These are merely informative in case you don't feel like measuring yourself down
 [This one][2] is 50 mm, 44 mm, 38 mm.
 
 Have more examples? Please let me know by filing an issue or, even better, by editing this file and doing a pull request.
-
-## Usage
-
- 1. Edit the values inside the OpenSCAD file and output an STL model. 
- 2. Print a low-resolution and low-density prototype model to see if it fits.
- 3. Adjust the values if necessary, and print your final piece.
-
-If you try this, let me know how it went.
 
 ## Ideas for development
 
