@@ -12,7 +12,7 @@ If you try this, let me know how it went.
 
 ## Bugs
 
- * Right now, the areas where rings join are hollow. The printed outcomes are fragile in those areas. I couldn't figure out how to properly do the ``union`` operation in order to deal with this.
+ * Right now, the areas where rings join are hollow. The printed outcomes are fragile in those areas. I couldn't figure out how to properly do the ``union`` operation in order to deal with this, but I'm working on it
 
 ## Example measurements
 
