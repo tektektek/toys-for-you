@@ -4,50 +4,26 @@
 // Copyleft 2014 Adam L. Winter
 /////////////////////////////////
 // Creates a 3-way ring based on your own measurements.
-//
-// The design is inspired in this kind of toy:
-// 
-//   http://image.dhgate.com/albu_251966915_00/1.0x0.jpg
-//   (usage illustration, sort of NSFW) 
-// An example of suggested measures:
-// 
-//  - Small: 
-//  - Medium:
-//  - Large: 50 mm, 44 mm, 38 mm, 
-//    (http://www.amazon.com/Best-Triad-Chamber-Cock-Ball/dp/B008Z3CW82)
-//
-// These examples are merely informative in case you
-// don't feel like measuring yourself down there.)
-//
-// Usage: Edit the values below. Print a low-res prototype model to see if it fits. 
-// Adjust and print your final piece. Lovingly sand it until smoooth. Finish it
-// so it's fully safe to use.
-//
-// If you try this, let me know how it went at longlongevenings [at] the gmail thing.
+// See README.md for much more.
 
 // EDIT THESE ///////////////////////////////////////
 
-// Measures are in millimeters, multiply by 2.54 
-// for inches.
+// Measures are in millimeters, multiply by 2.54 for inches. 
+// E.g. if you want 2 inches, input 5.08 (2 times 2.54)
 
 // Ring thickness
-ring_diameter = 8; // mm
+ring_diameter = 5; // mm
 // Diameter of the largest ring (base)
 bottom_diam = 50; // mm
 // Diameter of the middle ring (testicles)
 left_diam = 40; // mm
 // Diameter of the smaller ring (penis)
 right_diam = 38; // mm
-// Note that these will be the measurements of the 
+// Note that these will be the diameters of the 
 // holes in the rings, not the rings themselves.
 
 // Now hit F5 and see your new ring.
 // No need to edit further down!
-//
-// Ideas for future versions:
-//  - Use a cylinder design like http://cockringsonline.com/images/Super%20Tri-Ring%20Large.jpg
-//  - Strengthen the joints
-//  - How to soften the mesh with Blender
 
 /////////////////////////////////////////////////////
 ///// Here be dragons, but they be cute dragons /////
