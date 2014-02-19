@@ -1,4 +1,3 @@
-
 This is an OpenSCAD schematic that generates a Triple Ring toy based on your own measurements. The design is inspired in [this kind of toy][1] (informative usage illustration, NSFW.)
 
 ## Example measurements
@@ -24,6 +23,6 @@ If you try this, let me know how it went.
   * Another version with strengthened joints using small rounded cylinders.
   * Find out how to soften the mesh (with Blender?), so that the join between rings is smoother and doesn't get hairs stuck in it (I've read this can happen, manufacturers use clear epoxy to fill the gap).
 
-  [1]: //%20The%20design%20is%20inspired%20in%20this%20kind%20of%20toy:%20//%20%20//%20%20%20http://image.dhgate.com/albu_251966915_00/1.0x0.jpg
+  [1]: http://image.dhgate.com/albu_251966915_00/1.0x0.jpg
   [2]: http://www.amazon.com/Best-Triad-Chamber-Cock-Ball/dp/B008Z3CW82
   [3]: http://cockringsonline.com/images/Super%20Tri-Ring%20Large.jpg
