@@ -1,4 +1,6 @@
-This is an OpenSCAD schematic that generates a Triple Ring toy based on your own measurements. The design is inspired in [this kind of toy][1] (informative usage illustration, NSFW.)
+# Triple Ring
+
+This is an OpenSCAD schematic that generates a Triple Ring toy model based on your own measurements. The design is inspired in [this kind of toy][1] (informative usage illustration, NSFW.)
 
 ## Example measurements
 
