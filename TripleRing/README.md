@@ -10,6 +10,10 @@ This is an OpenSCAD schematic that generates a Triple Ring toy model based on yo
 
 If you try this, let me know how it went.
 
+## Bugs
+
+ * Right now, the areas where rings join are hollow. The printed outcomes are fragile in those areas. I couldn't figure out how to properly do the ``union`` operation in order to deal with this.
+
 ## Example measurements
 
 These are merely informative in case you don't feel like measuring yourself down there and just want to go in and print something.
