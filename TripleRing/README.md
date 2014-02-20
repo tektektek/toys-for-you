@@ -12,8 +12,8 @@ If you try this, let me know how it went.
 
 ## Bugs
 
- * Right now, the script appears to output objects with double their size. Just scale down by 50% in your printing program to fix it.
- * Measuring the ring holes in a printed sample, I found that the rings have 1mm less diameter than specified in the script. Sanding will probably lessen the difference. Maybe it's my specific printer, but you might want to compensate in case you find it happens to you.
+ * Right now, the script appears to output objects with double the intended size. Just scale down by 50% in your printing program to fix it.
+ * Measuring the ring holes in a printed sample, I found that the rings have 1mm less diameter than specified in the script. Sanding will probably lessen the difference. Maybe it's my specific printer, but you might want to compensate in case you find it happens to you. The ring diameter seems okay, though.
 
 ## Example measurements
 
