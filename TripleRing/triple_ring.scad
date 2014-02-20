@@ -16,7 +16,7 @@ ring_diameter = 5; // mm
 // Diameter of the largest ring (base)
 bottom_diam = 50; // mm
 // Diameter of the middle ring (testicles)
-left_diam = 40; // mm
+left_diam = 44; // mm
 // Diameter of the smaller ring (penis)
 right_diam = 38; // mm
 // Note that these will be the diameters of the 
