@@ -12,7 +12,7 @@
 // E.g. if you want 2 inches, input 5.08 (2 times 2.54)
 
 // Ring thickness
-ring_diameter = 5; // mm
+ring_diameter = 10; // mm
 // Diameter of the largest ring (base)
 bottom_diam = 50; // mm
 // Diameter of the middle ring (testicles)
@@ -27,6 +27,12 @@ right_diam = 38; // mm
 // More than 1 will make it fatter.
 roundness_ratio = 1;
 
+
+// How much thicker than the rings the joint should be.
+joint_padding = 1;
+// Sideways length of the joint
+joint_width = 8;
+
 // Now hit F5 and see your new ring.
 // No need to edit further down!
 
@@ -37,6 +43,7 @@ roundness_ratio = 1;
 // detail level for rendering and extrude quality
 circle_detail = 100;
 extrude_detail = 50;
+joint_detail = 50;
 
 // Apply the law of cosines to find the correct angles.
 // Source: http://www.clarku.edu/~djoyce/trig/oblique.html
@@ -54,31 +61,75 @@ rotate_extrude(convexity = 10, $fn=extrude_detail)
     scale([roundness_ratio,1,1])
       circle(r=ring_diameter/2, $fn=circle_detail);
 
-// FIXME: This math works but is poorly expressed
-r = ring_diameter/2+left_diam/2;    
+// Left ring
+r1 = ring_diameter/2+left_diam/2;    
 // Adjust position so that it rotates along the bottom ring
 translate([0,-bottom_diam/2-ring_diameter/2,0])
   rotate(a=[left_angle, 0, 0])
-    translate([0,r,0])
+    translate([0,r1,0])
       // Create the ring
       rotate_extrude(convexity = 10, $fn=extrude_detail)
-        translate([r, 0, 0])
+        translate([r1, 0, 0])
           scale([roundness_ratio,1,1])
             circle(r=ring_diameter/2, $fn=circle_detail);
 
-// FIXME: This shouldn't be a module, but won't work correctly
-// outside it.  I don't yet know why.
-module right_ring(ring_diameter, hole_diameter, rota) {
-  r = ring_diameter/2+right_diam/2; 
-  translate([0,bottom_diam/2+ring_diameter/2,0])
-    rotate(a=[-right_angle, 0, 0])
-      translate([0,-r,0])
-        rotate_extrude(convexity = 10, $fn=extrude_detail)
-          translate([r, 0, 0])
-            scale([roundness_ratio,1,1])
-              circle(r=ring_diameter/2, $fn=circle_detail);
-}
-right_ring(ring_diameter, right_diam, -right_angle);
+// Right ring
+r2 = ring_diameter/2+right_diam/2; 
+translate([0,bottom_diam/2+ring_diameter/2,0])
+  rotate(a=[-right_angle, 0, 0])
+    translate([0,-r2,0])
+      rotate_extrude(convexity = 10, $fn=extrude_detail)
+        translate([r2, 0, 0])
+          scale([roundness_ratio,1,1])
+            circle(r=ring_diameter/2, $fn=circle_detail);
 
-// debug shape for measuring
-//cube([bottom_diam, bottom_diam, 10], center=true);
+// Joints
+
+// Joint radius
+jr = ring_diameter/2+joint_padding/2;
+// Joint width
+jw = joint_width;
+
+// Right joint
+cr = ring_diameter/2+bottom_diam/2;  
+translate([0, -cr, 0])
+  rotate(90, v=[0,1,0])
+    cylinder(h=jw*2, r=jr, center=true, $fn=joint_detail);
+// Sphere tips
+translate([-jw,-cr,0])
+  sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+translate([jw,-cr,0])
+  sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+
+// Left joint
+cr1 = ring_diameter/2+bottom_diam/2;  
+translate([0, cr1, 0])
+  rotate(90, v=[0,1,0])
+    cylinder(h=jw*2, r=jr, center=true, $fn=joint_detail);
+// Sphere tips
+translate([-jw,cr1,0])
+  sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+translate([jw,cr1,0])
+  sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+
+// Top joint
+// Apply the same rotation as the left ring to find the right position
+translate([0,-bottom_diam/2-ring_diameter/2,0])
+  rotate(a=[left_angle, 0, 0])
+    translate([0,r1*2,0])
+      rotate(90, v=[0,1,0])
+        cylinder(h=jw*2, r=jr, center=true, $fn=joint_detail);
+// Sphere tips
+translate([0,-bottom_diam/2-ring_diameter/2,0])
+  rotate(a=[left_angle, 0, 0])
+    translate([-jw,r1*2,0])
+      rotate(90, v=[0,1,0])
+        sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+translate([0,-bottom_diam/2-ring_diameter/2,0])
+  rotate(a=[left_angle, 0, 0])
+    translate([jw,r1*2,0])
+      rotate(90, v=[0,1,0])
+        sphere(r=ring_diameter/2+joint_padding/2, $fn=joint_detail);
+
+
+
