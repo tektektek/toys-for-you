@@ -2,6 +2,8 @@
 // Triple tube design
 /////////////////////////////////
 // Copyleft 2014 Adam L. Winter
+// Licensed under the GPL version 3 or any later version.
+// See the LICENSE file in the root of the repository for the full license text.
 /////////////////////////////////
 // Creates a 3-way ring based on your own measurements.
 // This one is more tube-shaped than ring-shaped.
@@ -13,19 +15,19 @@
 // E.g. if you want 2 inches, input 5.08 (2 times 2.54)
 
 // Ring thickness
-ring_diameter = 5; // mm
+ring_diameter = 3; // mm
 // Ring length
 // If you want one or more to be a circular ring, just make them 0.
-bottom_tube_length = 0;
-left_tube_length = 0;
-right_tube_length = 0;
+bottom_tube_length = 10;
+left_tube_length = 4;
+right_tube_length = 20;
 
 // Diameter of the largest ring
 bottom_diam = 50; // mm
 // Diameter of the middle ring
-left_diam = 44; // mm
+left_diam = 45; // mm
 // Diameter of the smaller ring
-right_diam = 38; // mm
+right_diam = 39; // mm
 // Note that these will be the diameters of the 
 // holes in the rings, not the rings themselves.
 
@@ -35,13 +37,13 @@ right_diam = 38; // mm
 // Note: If you're using tubes and the joint diameter is more than double the shortest tube length,
 // you might get rough edges. Inspect the inside your model carefully to see that it's smooth.
 // If using simple rings, make sure they're equal or smaller than the ring diameter above.
-top_joint_diameter = 5;
-left_joint_diameter = 5;
-right_joint_diameter = 5;
+top_joint_diameter = 7;
+left_joint_diameter = 10;
+right_joint_diameter = 8;
 // Sideways length of the joint, excluding the round endings
-top_joint_width = 10;
-left_joint_width = 15;
-right_joint_width = 10;
+top_joint_width = 8;
+left_joint_width =8;
+right_joint_width = 7;
 
 // Roundness ratio: Don't use this if you're not using circular rings (e.g. if you set any tube length above)
 // 1 means perfect circle.
@@ -130,6 +132,7 @@ translate([0,bottom_diam/2+ring_diameter/2,0])
             }
 
 // Joints
+// (I love you now that you've read this far)
 
 // Joint radius
 rjd = right_joint_diameter;
