@@ -8,6 +8,8 @@ This is an OpenSCAD schematic that generates a Triple Ring toy model based on yo
  2. Print a low-resolution and low-density prototype model to test if it fits.
  3. Adjust the values if necessary, and print your final piece.
 
+When printing, you will want to use a support. It wastes some plastic, but if you do without it, the top join will be warped. This warping might be acceptable for a test piece (though you will need to sand or file it), but definitely use a support in your final print.
+
 If you try this, let me know how it went.
 
 ## Bugs
